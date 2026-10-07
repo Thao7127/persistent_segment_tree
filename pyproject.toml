@@ -1,0 +1,14 @@
+[project]
+name = "persistent-segment-tree"
+version = "0.1.0"
+description = "A segment tree that preserves prior versions after updates, enabling historical range queries on point-in-time snapshots of an array."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
