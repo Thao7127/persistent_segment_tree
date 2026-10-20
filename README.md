@@ -24,3 +24,10 @@ The trade-off: the combine operation is fixed to summation. If you need min/max/
 - The constructor accepts an empty list. `size` will be 0 and `version_count()` will be 1 (version 0 exists but holds no elements). Any `query` or `update` on an empty tree raises `ValueError`, because there is no valid index.
 - Version numbers are integers assigned sequentially: 0 is the initial array, and each `update` returns the next integer. You may branch — two updates from the same parent produce two independent versions.
 - `left` and `right` are inclusive. `query(0, 2, 1)` is an error, not an empty-sum shortcut.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
