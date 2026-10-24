@@ -1,6 +1,6 @@
 [project]
 name = "persistent-segment-tree"
-version = "0.1.1"
+version = "0.1.2"
 description = "A segment tree that preserves prior versions after updates, enabling historical range queries on point-in-time snapshots of an array."
 requires-python = ">=3.10"
 dependencies = []
